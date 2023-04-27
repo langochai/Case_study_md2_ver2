@@ -7,6 +7,7 @@ import {changeAuthority} from "./changeAuthority";
 import {changeJob} from "./changeJob";
 import {changeStatus} from "./changeStatus";
 import {readline} from "../../../../main";
+import {deleteAccount} from "./deleteAccount";
 
 export function accessAccountForAdmin(username, list: AccountManager, checkUsername) {
     console.log(`Accessed. Please choose an option:`)
@@ -31,6 +32,9 @@ export function accessAccountForAdmin(username, list: AccountManager, checkUsern
             break
         case 5:
             changeStatus(username,list,checkUsername)
+            break
+        case 6:
+            deleteAccount(username,list,checkUsername)
             break
         default:
             menuForAdmin(username, list)
