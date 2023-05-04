@@ -72,12 +72,12 @@ export class AccountManager {
 
     showListForAdminSortedByStatus() {
         let list: Object[] = []
-        for (let i = 0; i < this.list.length; i++) {
-            if (this.list[i].job == "admin") {
-                let {username, password, authority, job, status} = this.list[i]
-                list.push({username, password, authority, job, status})
-            }
-        }
+        // for (let i = 0; i < this.list.length; i++) {
+        //     if (this.list[i].job == "admin") {
+        //         let {username, password, authority, job, status} = this.list[i]
+        //         list.push({username, password, authority, job, status})
+        //     }
+        // }
         for (let i = 0; i < this.list.length; i++) {
             if (this.list[i].status == "done") {
                 let {username, password, authority, job, status} = this.list[i]
