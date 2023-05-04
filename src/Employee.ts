@@ -1,8 +1,15 @@
 export type Authority = "admin" | "employee"
 export type Job = "cleaning" | "serving customers" | "bouncer" | "waiting for new job" |"admin"
 export type Status = "done" | "on going"
+export interface IEmployee {
+    username:string;
+    password:string;
+    authority:Authority;
+    job:Job;
+    status:Status;
+}
 
-export class Employee {
+export class Employee  implements IEmployee{
     username: string;
     password: string;
     authority : Authority;
