@@ -6,8 +6,8 @@ import {changePassword} from "./changePassword";
 import {changeAuthority} from "./changeAuthority";
 import {changeJob} from "./changeJob";
 import {changeStatus} from "./changeStatus";
-import {readline} from "../../../../main";
 import {deleteAccount} from "./deleteAccount";
+import {readline} from "../../../../main";
 
 export function accessAccountForAdmin(username, list: AccountManager, checkUsername) {
     console.log(`Accessed. Please choose an option:`)

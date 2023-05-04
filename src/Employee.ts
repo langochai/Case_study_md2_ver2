@@ -1,20 +1,15 @@
 export type Authority = "admin" | "employee"
 export type Job = "cleaning" | "serving customers" | "bouncer" | "waiting for new job" |"admin"
 export type Status = "done" | "on going"
-export interface IEmployee {
-    username:string;
-    password:string;
-    authority:Authority;
-    job:Job;
-    status:Status;
-}
 
-export class Employee  implements IEmployee{
+export class Employee{
     username: string;
     password: string;
     authority : Authority;
     job : Job;
     status: Status;
+    protected secretQuestion:string;
+    protected secretAnswer:string;
 
     constructor(username: string, password: string) {
         this.username = username;
@@ -38,6 +33,12 @@ export class Employee  implements IEmployee{
     setStatus(status:Status){
         this.status = status
     }
+    setSecretQuestion(secretQuestion:string){
+        this.secretQuestion = secretQuestion
+    }
+    setSecretAnswer(secretAnswer:string){
+        this.secretAnswer = secretAnswer
+    }
     getUsername(){
         return this.username
     }
@@ -52,5 +53,11 @@ export class Employee  implements IEmployee{
     }
     getStatus(){
         return this.status
+    }
+    getSecretQuestion(){
+        return this.secretQuestion
+    }
+    getSecretAnswer(){
+        return this.secretAnswer
     }
 }

@@ -6,15 +6,15 @@ import {signUp} from "./src/Sign_up/SignUp";
 
 
 let list = new AccountManager()
-let admin = new Admin('hai','abc',list)
-let employee1 = new Employee("aa@gmail.com",'aa11')
+let admin = new Admin('hai', 'abc', list)
+let employee1 = new Employee("aa@gmail.com", 'aa11')
 employee1.setJob("serving customers")
-let employee2 = new Employee("bb@gmail.com",'bb11')
+let employee2 = new Employee("bb@gmail.com", 'bb11')
 employee2.setJob("bouncer")
-let employee3 = new Employee("cc@gmail.com",'cc11')
+let employee3 = new Employee("cc@gmail.com", 'cc11')
 employee3.setJob("cleaning")
 employee3.setStatus("done")
-let employee4 = new Employee("dd@edu.vn","dd11")
+let employee4 = new Employee("dd@edu.vn", "dd11")
 list.add(admin)
 list.add(employee1)
 list.add(employee2)
@@ -23,12 +23,18 @@ list.add(employee4)
 
 export let readline = require('readline-sync');
 
-export function main(){
+enum mainMenu {
+    showList,
+    logIn,
+    signUp,
+}
+
+export function main() {
     console.log(`Press a number to pick an option:`)
     let option: string[] = ["Show list of accounts", "Log in", "Create new account"]
     let index = readline.keyInSelect(option, 'Please choose:')
-    switch (index){
-        case 0:
+    switch (index) {
+        case mainMenu.showList:
             list.showListForAnyone()
             if (readline.keyInYN('Do you wanna return to main menu?\n' +
                 'Press Y for main menu, press N to quit')) {
@@ -37,14 +43,15 @@ export function main(){
                 console.log(`Cya later!`)
             }
             break
-        case 1:
+        case mainMenu.logIn:
             logIn(list)
             break
-        case 2:
+        case mainMenu.signUp:
             signUp(list)
             break
         default:
             console.log(`Cya later!`)
     }
 }
+
 main()
