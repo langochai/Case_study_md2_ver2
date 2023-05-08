@@ -13,27 +13,27 @@ export function accessAccountForAdmin(username, list: AccountManager, checkUsern
     console.log(`Accessed. Please choose an option:`)
     let option: string[] = ["Show info", "Change username", "Change password", "Change authority",
         "Change job", "Change status", "Delete account"]
-    let index = readline.keyInSelect(option, 'Please choose:')
+    let index = +readline.keyInSelect(option, 'Please choose:') + 1
     switch (index) {
-        case 0:
+        case 1:
             showInfo(username, list, checkUsername)
             break
-        case 1:
+        case 2:
             changeName(username,list,checkUsername)
             break
-        case 2:
+        case 3:
             changePassword(username,list,checkUsername)
             break
-        case 3:
+        case 4:
             changeAuthority(username,list,checkUsername)
             break
-        case 4:
+        case 5:
             changeJob(username,list,checkUsername)
             break
-        case 5:
+        case 6:
             changeStatus(username,list,checkUsername)
             break
-        case 6:
+        case 7:
             deleteAccount(username,list,checkUsername)
             break
         default:

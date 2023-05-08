@@ -57,7 +57,7 @@ export class Admin extends Employee{
         return super.getPassword();
     }
 
-    getAuthority(): "admin" | "employee" {
+    getAuthority(){
         return super.getAuthority();
     }
 
@@ -65,7 +65,7 @@ export class Admin extends Employee{
         return super.getJob();
     }
 
-    getStatus(): "done" | "on going" {
+    getStatus(){
         return super.getStatus();
     }
     getList(){

@@ -29,8 +29,8 @@ export class AccountManager {
     showListForAdmin() {
         let list: Object[] = []
         for (let i = 0; i < this.list.length; i++) {
-            let {username, password, authority, job, status} = this.list[i]
-            list.push({username, password, authority, job, status})
+            let {username, authority, job, status} = this.list[i]
+            list.push({username, authority, job, status})
         }
         console.table(list)
     }
@@ -39,32 +39,32 @@ export class AccountManager {
         let list: Object[] = []
         for (let i = 0; i < this.list.length; i++) {
             if (this.list[i].job == "admin") {
-                let {username, password, authority, job, status} = this.list[i]
-                list.push({username, password, authority, job, status})
+                let {username, authority, job, status} = this.list[i]
+                list.push({username, authority, job, status})
             }
         }
         for (let i = 0; i < this.list.length; i++) {
             if (this.list[i].job == "cleaning") {
-                let {username, password, authority, job, status} = this.list[i]
-                list.push({username, password, authority, job, status})
+                let {username, authority, job, status} = this.list[i]
+                list.push({username, authority, job, status})
             }
         }
         for (let i = 0; i < this.list.length; i++) {
             if (this.list[i].job == "serving customers") {
-                let {username, password, authority, job, status} = this.list[i]
-                list.push({username, password, authority, job, status})
+                let {username, authority, job, status} = this.list[i]
+                list.push({username, authority, job, status})
             }
         }
         for (let i = 0; i < this.list.length; i++) {
             if (this.list[i].job == "bouncer") {
-                let {username, password, authority, job, status} = this.list[i]
-                list.push({username, password, authority, job, status})
+                let {username, authority, job, status} = this.list[i]
+                list.push({username, authority, job, status})
             }
         }
         for (let i = 0; i < this.list.length; i++) {
             if (this.list[i].job == "waiting for new job") {
                 let {username, password, authority, job, status} = this.list[i]
-                list.push({username, password, authority, job, status})
+                list.push({username, authority, job, status})
             }
         }
         console.table(list)
@@ -80,14 +80,14 @@ export class AccountManager {
         // }
         for (let i = 0; i < this.list.length; i++) {
             if (this.list[i].status == "done") {
-                let {username, password, authority, job, status} = this.list[i]
-                list.push({username, password, authority, job, status})
+                let {username, authority, job, status} = this.list[i]
+                list.push({username, authority, job, status})
             }
         }
         for (let i = 0; i < this.list.length; i++) {
             if (this.list[i].status == "on going") {
-                let {username, password, authority, job, status} = this.list[i]
-                list.push({username, password, authority, job, status})
+                let {username, authority, job, status} = this.list[i]
+                list.push({username, authority, job, status})
             }
         }
         console.table(list)

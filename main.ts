@@ -23,30 +23,21 @@ list.add(employee4)
 
 export let readline = require('readline-sync');
 
-enum mainMenu {
-    showList,
-    logIn,
-    signUp,
-}
-
 export function main() {
+    console.log(`*****************************************************************************************`)
+    console.log(`Main menu`)
     console.log(`Press a number to pick an option:`)
     let option: string[] = ["Show list of accounts", "Log in", "Create new account"]
-    let index = readline.keyInSelect(option, 'Please choose:')
+    let index = +readline.keyInSelect(option, 'Please choose:') + 1
     switch (index) {
-        case mainMenu.showList:
+        case 1:
             list.showListForAnyone()
-            if (readline.keyInYN('Do you wanna return to main menu?\n' +
-                'Press Y for main menu, press N to quit')) {
-                main()
-            } else {
-                console.log(`Cya later!`)
-            }
+            main()
             break
-        case mainMenu.logIn:
+        case 2:
             logIn(list)
             break
-        case mainMenu.signUp:
+        case 3:
             signUp(list)
             break
         default:
